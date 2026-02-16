@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This lab demonstrates digital forensic analysis using Autopsy 4.3.0 and WinHex. The objective was to examine a forensic image file, perform keyword searches, analyze metadata, review hash values, and construct a timeline of system activity.
+This lab demonstrates digital forensic analysis using Autopsy 4.3.0 and WinHex. The objective was to analyze a forensic image file (.E01), perform keyword searches, examine metadata, verify hash values, and construct a timeline of activity.
 
 The investigation follows standard forensic methodology: acquisition, examination, analysis, and reporting.
 
@@ -12,9 +12,9 @@ The investigation follows standard forensic methodology: acquisition, examinatio
 
 ### Case Initialization
 
-![Autopsy Case](autopsyforensic.png)
+![Autopsy Case](./autopsyforensic.png)
 
-A forensic image (.E01) was added as a data source inside Autopsy. The case file was configured with examiner details and proper timezone settings.
+A forensic image (.E01) was added as a data source in Autopsy. The case was configured with examiner information and the correct timezone (America/New_York).
 
 ---
 
@@ -24,48 +24,51 @@ A forensic image (.E01) was added as a data source inside Autopsy. The case file
 
 ![Keyword Search Results](keywordsearch.png)
 
-A keyword search for **"M57"** was conducted across the image. Multiple HTML files and artifacts contained matching results, indicating user activity connected to the M57 dataset.
+A keyword search for "M57" was performed across the image.
 
-The search confirmed:
+Findings:
 
-- Multiple references to M57 within log files
-- Web activity tied to IP addresses
-- User interaction timestamps
+- Multiple HTML artifacts contained the keyword
+- References to internal IP addresses were identified
+- User activity logs were recovered with associated timestamps
+
+The results confirm user interaction related to the M57 dataset.
 
 ---
 
-## 3. File Metadata Examination
+## 3. File Metadata and Hash Verification
 
-### File Metadata Details
+### Metadata and Hash Values
 
-![Metadata Results](hashvalues.png)
+![Hash and Metadata Results](hashvalues.png)
 
-Selected files were examined for:
+Selected files were analyzed to review:
 
-- Created timestamps  
-- Modified timestamps  
-- Accessed timestamps  
-- MD5 hash values  
+- Created timestamps
+- Modified timestamps
+- Accessed timestamps
+- MD5 hash values
+- Allocation status
 
-Metadata confirmed file system allocation status and verified file integrity.
+The MD5 hash values were consistent and no mismatches were identified. File metadata aligns with recorded system activity.
 
 ---
 
 ## 4. Timeline Analysis
 
-### Timeline View
+### Timeline Visualization
 
 ![Timeline Results](timelineresults.png)
 
-The Autopsy timeline tool was used to visualize system activity across months.
+The Autopsy timeline tool was used to reconstruct system activity chronologically.
 
-Findings showed:
+Observations:
 
-- Increased activity in November and December 2009  
-- Concentrated modification events  
-- Consistent browser log updates  
+- Increased activity during November and December 2009
+- Concentrated modification events
+- Repeated browser log updates
 
-This helps reconstruct user behavior chronologically.
+The timeline supports the keyword findings and provides chronological context.
 
 ---
 
@@ -75,13 +78,15 @@ This helps reconstruct user behavior chronologically.
 
 ![WinHex File Record](screenshotrecord.png)
 
-WinHex was used to examine raw file data and verify file contents at the hex level.
+WinHex was used to examine raw NTFS file structures.
 
 Observations:
 
-- NTFS file structure confirmed  
-- ASCII data visible within allocated clusters  
-- No evidence of corruption  
+- NTFS boot sector and file system structures confirmed
+- ASCII content visible within allocated clusters
+- No anomalies or corruption detected
+
+Hex-level review validates file system integrity.
 
 ---
 
@@ -91,61 +96,58 @@ Observations:
 
 ![File Properties](screenshotproperties.png)
 
-File system properties were reviewed to validate:
+File system properties were reviewed to confirm:
 
-- File size  
-- Allocation status  
-- Timestamps  
-- Attributes  
+- File size consistency
+- Allocation status
+- Timestamp accuracy
+- Attribute flags
 
-All examined files were allocated and consistent with metadata records.
+All examined files were allocated and internally consistent.
 
 ---
 
-## 7. Data Interpreter View
+## 7. Data Interpreter Verification
 
-### Data Interpretation Panel
+### Data Interpreter Panel
 
 ![Data Interpreter](datainterpreter.png)
 
-The data interpreter tool confirmed:
+The data interpreter tool was used to validate:
 
-- Hex to ASCII conversion  
-- Logical file structure  
-- Proper sector alignment  
+- Hex to ASCII translation
+- Logical sector alignment
+- Proper NTFS structure interpretation
 
-This step verifies forensic accuracy at the binary level.
+This confirms forensic accuracy at the binary level.
 
 ---
 
 ## Forensic Conclusion
 
-The forensic analysis of the provided image revealed consistent user activity tied to the M57 dataset. Keyword searches identified multiple HTML log files referencing internal IP addresses and user sessions.
+Examination of the forensic image identified consistent user activity related to the M57 dataset. Keyword searches recovered relevant HTML artifacts containing internal IP addresses and session data.
 
-Timeline analysis confirmed concentrated activity in late 2009. File metadata and hash values indicate no evidence of file tampering or corruption. Hex-level inspection validated file integrity and NTFS structure consistency.
+Timeline reconstruction indicates concentrated system activity during late 2009. Metadata review and MD5 hash verification show no evidence of tampering or corruption. Hex-level inspection confirms NTFS structural integrity.
 
-Based on the examination results, the evidence appears intact and reliable. The artifacts recovered provide a clear reconstruction of system usage and web interaction during the relevant time period.
+Based on the analysis performed, the forensic image appears intact and reliable. The recovered artifacts provide a defensible reconstruction of system and browser activity during the examined timeframe.
 
 ---
 
 ## Tools Used
 
-- Autopsy 4.3.0  
-- WinHex  
-- MD5 Hash Verification  
-- Timeline Analysis  
-- Keyword Search (Literal & Regex)
+- Autopsy 4.3.0
+- WinHex
+- MD5 Hash Verification
+- Timeline Analysis
+- Keyword Search (Literal and Regex)
 
 ---
 
 ## Skills Demonstrated
 
-- Forensic Image Analysis  
-- Keyword Artifact Identification  
-- Metadata Examination  
-- Timeline Reconstruction  
-- Hash Verification  
-- Hex-Level File Inspection  
-- Digital Evidence Documentation  
-
----
+- Forensic Image Examination
+- Keyword Artifact Identification
+- Metadata and Hash Verification
+- Timeline Reconstruction
+- Hex-Level File Analysis
+- Digital Evidence Documentation
