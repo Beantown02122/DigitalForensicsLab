@@ -12,7 +12,7 @@ The investigation follows standard forensic methodology: acquisition, examinatio
 
 ### Case Initialization
 
-![Autopsy Case](./autopsyforensic.png)
+![Autopsy Case](./autopsyforencsic.png)
 
 A forensic image (.E01) was added as a data source in Autopsy. The case was configured with examiner information and the correct timezone (America/New_York).
 
@@ -111,7 +111,7 @@ All examined files were allocated and internally consistent.
 
 ### Data Interpreter Panel
 
-![Data Interpreter](datainterpreter.png)
+![Data Interpreter](./dataintepreter.png)
 
 The data interpreter tool was used to validate:
 
